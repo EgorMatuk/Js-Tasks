@@ -26,4 +26,4 @@ console.log(treeSum([5, 7,
 function removeLeadingTrailing(string){
     return parseFloat(string);
 }
-console.log(removeLeadingTrailing("90")); 
+console.log(removeLeadingTrailing("07.1200")); 
