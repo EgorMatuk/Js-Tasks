@@ -4,12 +4,10 @@
 
 function treeSum(array) {
     let sum = 0;
-    function isArrayElement(array){
-        array.forEach(element => {
-           Array.isArray(element) ? isArrayElement(element) : sum += element; 
-        });
+    let arrayString = array.join();
+    for(let i = 0; i != arrayString.length; ++i){
+        isFinite(parseFloat(arrayString[i])) ? sum += parseFloat(arrayString[i]) : false;
     }
-    isArrayElement(array);
     return sum;
 }
 console.log(treeSum([5, 7, 
