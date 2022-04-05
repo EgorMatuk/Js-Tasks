@@ -11,9 +11,9 @@ changeArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
 Числа в массиве не должны повторяться.
 Первоначальный порядок должен быть сохранен. */
 function changeArray(array){
-    return array.filter(value => isNaN(value) === false);
+    return array.filter(value => Number.isInteger(value) && value >= 0);
 }
-console.log(changeArray([1, 2, "a", "b"]));
+console.log(changeArray([1, 2, "aasf", "1", "123", -123]));
 
 
 
@@ -46,6 +46,10 @@ isParticularArray([2, 7, 8, 4, 6, 1, 6, 3]) ➞ false
 
 
  */
+function isParticularArray(array){
+    return array.every((value, index) => !(value % 2 && index % 2) || (value % 2 && index % 2));
+}
+console.log(isParticularArray([2, 7, 4, 9, 6, 1, 6, 3]));
 
 
 
@@ -73,6 +77,10 @@ testJackpot(["LL", "LL", "LL", "Ll", "LL"]) ➞ false
 
 
  */
+function testJackpot(array){
+    return array.every(value => value === array[0]);
+}
+console.log(testJackpot(["LL", "LL", "LL", "LL", "LL"]));
 
 
 
