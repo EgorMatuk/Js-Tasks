@@ -12,7 +12,7 @@ indexMulSum([-3, 0, 8, -6]) ➞ -2
 function indexMulSum(array){
   return array.reduce((sum,current,index) => sum + current * index,0);
 }
-console.log(indexMulSum([1, 2, 3, 4, 5]));
+console.log(indexMulSum([-3, 0, 8, -6]));
 
 
 

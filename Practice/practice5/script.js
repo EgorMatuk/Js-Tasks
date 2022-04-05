@@ -10,7 +10,10 @@ changeArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
 В данных массивах есть только целые числа и строки.
 Числа в массиве не должны повторяться.
 Первоначальный порядок должен быть сохранен. */
-
+function changeArray(array){
+    return array.filter(value => isNaN(value) === false);
+}
+console.log(changeArray([1, 2, "a", "b"]));
 
 
 
