@@ -147,6 +147,31 @@ console.log(testJackpot(["LL", "LL", "LL", "LL", "LL"]));
     }
 ] */
 
+var users = [
+    {
+        firstName: 'Alayah Mcgee',
+        age: 37
+    },
+    {
+       firstName: 'John Doe',
+       age: 28
+    },
+    {
+       firstName: 'Dev Bernard',
+       age: 23
+    },
+    {
+       firstName: 'Peter Johnson',
+       age: 18
+    }
+]
+
+function sortUsers(array){
+    return array.sort((a, b) => a.age - b.age);
+}
+console.log(sortUsers(users));
+
+
 
 
 
