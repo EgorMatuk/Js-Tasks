@@ -53,16 +53,7 @@ console.log(combineNameWork(names,jobs));
 // 3.	У вас есть входной массив (из строк с двумя буквами) и массив слов
 // Напишите функцию, которая возвращает true, если каждую (строку с двумя буквами) из первого массива можно найти хотя бы один раз в массиве слов(втором массиве).
 function canFind(arrayWords, arrayString){
-    let result = null;
-    for(let i = 0; i != arrayString.length; ++i){
-        result = false;
-        for(let j = 0; j != arrayWords.length; ++j){
-            if(arrayString[i].includes(arrayWords[j])){
-                result = true;
-            }
-        }
-    }
-    return result;
+    return arrayWords.every((word) => arrayString.some(string => string.includes(word)));   
 }
 console.log(canFind(["at", "be", "th", "au"], ["beautiful", "the", "hat"]));
 
