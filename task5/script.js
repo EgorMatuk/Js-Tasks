@@ -10,13 +10,21 @@
 function findVow(){
     let value = Array.from(prompt('Введите строку'));
     !(value || value == null)? findVow() : true;
-    let Vow = Array.from('аиеёоуыэюяАИЕЁОУЫЭЮЯ');
+    let Vow = ('аиеёоуыэюяАИЕЁОУЫЭЮЯ');
     let sum = 0;
 
     //forEach 
     value.forEach(element => {
-        Vow.find(vowElement => vowElement === element)? ++sum : false;
+        Array.from(Vow).find(vowElement => vowElement === element)? ++sum : false;
     });
+
+    //filter
+    value.filter(element => (Vow.includes(element)? ++sum : false));
+
+
+    //reduce
+    sum = value.reduce((previousValue, currentValue) => previousValue + Vow.includes(currentValue), 0) 
+    
     return sum;
 }
 
