@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-image: url('images/drinksPhoto.jpg');
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 30px 0;
+}
+
+.header-container{
+    background-color: rgba(255, 255, 255, 0.726);
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+button:hover{
+    background-color: rgb(44, 44, 44);
+    color: azure;
+}
+.content{
+    padding-top: 250px;
+    display: flex;
+    justify-content: center;
+}
+.drinks-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.drinks-container img{
+    width: 100px;
+    height: 100px;
+}
