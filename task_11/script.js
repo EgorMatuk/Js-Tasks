@@ -37,5 +37,4 @@ function darkTheme(){
         document.querySelector('#switcher').style.color = "black"
     );
 
-    console.log(newImg.src);
 }
