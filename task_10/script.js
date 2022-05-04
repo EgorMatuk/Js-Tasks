@@ -40,6 +40,6 @@ console.log(sortStr(["orange ", "mandarin", "pear", "coconut "], "cmop"))
 // revOddWord ("It is false") ➞ "It is eslaf"
 // revOddWord ("Dear Santa, give me a new iPhone”)➞ "Dear atnaS, give me a wen iPhone. "
 function revOddWord(str){
-    return str.split(' ').map(element  => element.length % 2 == 0 ? element : element.split('').reverse().join('')).join(' ');
+    return str.split(' ').map(element  => element.length % 2 === 0 ? element : element.split('').reverse().join('')).join(' ');
 }
 console.log(revOddWord ("It is false"));
