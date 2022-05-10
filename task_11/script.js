@@ -22,19 +22,8 @@ function addCat(){
 }
 
 function darkTheme(){
-    var newImg = document.querySelector('#switcher img');
-
-    document.querySelector('body').style.backgroundColor != "black"? (
-        newImg.src = "./images/moon.svg",
-        document.querySelector('body').style.backgroundColor = "black",
-        document.querySelector('table').style.color = "white",
-        document.querySelector('#switcher').style.color = "white",
-        newImg.style.backgroundColor = "white"
-    ) : (
-        newImg.src = "./images/sun.svg",
-        document.querySelector('body').style.backgroundColor = "white",
-        document.querySelector('table').style.color = "black",
-        document.querySelector('#switcher').style.color = "black"
-    );
-
+    document.querySelector('body').classList.toggle('darkTheme');
+    document.querySelector('.card').classList.toggle('dark-cont');
+    var icon = document.querySelector('#switcher img');
+    document.querySelector('body').classList.contains('darkTheme') ? (icon.src = "./images/moon.svg", icon.style.backgroundColor = "white" ) : icon.src = "./images/sun.svg";
 }

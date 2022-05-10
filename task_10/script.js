@@ -22,8 +22,6 @@ console.log(numbSort([777, 182, 11, 881, 27]) );
 // sortStr(["orange ", "mandarin", " pear", "coconut "], "cmop")➞ [" coconut", " mandarin", " orange", " pear"]
 // sortStr(["middle", "junior", "senior"], "stnmj")➞ ["senior", " middle", " junior"]
 // sortStr(["bike", "car", "motorcycle"], "camrb")➞ ["car", "motorcycle", "bike"]
-
-
 function sortStr(array, str) {
     return array.sort((a, b) => str.indexOf(a[0]) - str.indexOf(b[0]));
 }

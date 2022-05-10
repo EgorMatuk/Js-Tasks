@@ -17,3 +17,18 @@
 #change-switcher{
     cursor: pointer;
 }
+
+
+
+
+
+.darkTheme{
+    background-color: black;
+    color: white;
+}
+.dark-cont{
+    background-color: rgba(26, 5, 5, 0.836);
+}
+.dark-cont .card-title{
+    color: white;
+}
