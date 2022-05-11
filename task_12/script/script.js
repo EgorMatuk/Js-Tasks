@@ -1,36 +1,58 @@
-var inputData = document.querySelector('#inputTask');
-var btnAddTask = document.querySelector('#btn-add');
-var ulList = document.querySelector('#list');
-var spans = document.getElementsByTagName('span');
-
-
-//<li>Task1 <span>Delete</span></li>
-function createTask(){
-    var inputValue = inputData.value;
-    inputData.value = '';
-
-    var newLi = document.createElement('li');
-    newLi.innerText = inputValue;
-
-    var newSpan = document.createElement('span');
-    newSpan.innerText = ' DELETE';
-
-    newLi.append(newSpan);
-    ulList.append(newLi);
-
-    removeTask();
-} 
-
-btnAddTask.onclick = createTask;
+var inputTaskArea = document.getElementById('inputTask');
+var taskAddButton = document.getElementById('btn-add');
+var getInfoButton = document.getElementById('btn-info');
+var deleteButtons = document.getElementsByTagName('span');
+var ListElements = document.getElementsByTagName('li');
+spanDeleteON();
+taskActivityON();
+var count = document.getElementsByClassName('not-active').length;
+document.querySelector('.active-tasks').innerHTML = document.getElementsByClassName('list-group-item').length - document.getElementsByClassName('not-active').length;
 
 
 
-function removeTask(){
-    for(let spanItem of spans){
-        spanItem.onclick = function(){
-            spanItem.parentElement.remove();
+
+taskAddButton.onclick = function(){
+    var addTaskContainer = document.getElementById('list');
+    inputTaskArea.value != 0 ? addTaskContainer.insertAdjacentHTML("beforeend",`
+        <li class="list-group-item">${inputTaskArea.value}<span> Delete</span> Дата:${(new Date()).toString('dd.MM.yyyyг hh:mm')}</li>
+    `) : false;
+    spanDeleteON();
+    taskActivityON();
+}
+
+getInfoButton.onclick = function(){
+    document.querySelector('.hide-div').classList.toggle('modal-open');
+    document.querySelector('.modal').classList.toggle('show');
+
+    document.querySelector('.btn-close').onclick = function(){
+        document.querySelector('.modal').classList.toggle('show');
+        document.querySelector('.hide-div').classList.toggle('modal-open');
+    }
+}
+
+function spanDeleteON(){
+    for (const element of deleteButtons) {
+        element.onclick = function(){
+            element.parentElement.remove();
         }
     }
 }
 
-removeTask();
+function taskActivityON(){
+    for (const element of ListElements) {
+        element.onclick = function(){
+            element.classList.toggle('not-active');
+            document.querySelector('.not-active-tasks').innerHTML = document.getElementsByClassName('not-active').length;
+            document.querySelector('.active-tasks').innerHTML = document.getElementsByClassName('list-group-item').length - document.getElementsByClassName('not-active').length;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -11,26 +11,50 @@
 </head>
 
 <body>
+    <div class="hide-div"></div>
     <h1 class="text-center">To-Do application</h1>
 
     <div class="container">
-        <div class="row g-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <div class="col-8">
                 <input type="text" class="form-control" id="inputTask" placeholder="Input task">
             </div>
-            <button class="btn btn-primary col-4" id="btn-add">Add task</button>
+            <button class="btn btn-primary col-2" id="btn-add">Add task</button>
+            <button type="button" class="btn btn-info col-2" id="btn-info">Info</button>
         </div>
 
-        <ul class="row g-3" id="list">
-            <li>Task1 <span>Delete</span></li>
-            <li>Task2 <span>Delete</span></li>
-            <li>Task3 <span>Delete</span></li>
-           
+        <ul class="list-group" id="list">
+            <li class="list-group-item">Task1<span> Delete</span></li>    
+            <li class="list-group-item">Task2<span> Delete</span></li>   
+            <li class="list-group-item">Task3<span> Delete</span></li>    
         </ul> 
 
-    </div>
 
+
+        <div class="active-container">
+            <h3>Неактивные задачи:</h3>
+            <div class = "not-active-tasks">0</div>
+            <h3>Активных задачи:</h3>
+            <div class = "active-tasks">0</div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Информация о разработчике :)</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Этот парень был из тех, кто просто любит жизнь</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
     <script src="./script/script.js"></script>
+    <script src="./script/date.js"></script>
 </body>
 
 </html>
