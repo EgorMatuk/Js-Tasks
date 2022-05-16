@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_13</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="main-form" action="https://fe.it-academy.by/TestForm.php" method="post">
+        <h1 class="form-title">Здравствуйте</h1>
+        <div class="form-body">
+            <div class="label-row">
+                <div>
+                    <label for="creator-name">Разработчики:</label>
+                </div>
+                <div>
+                    <label for="name">Название сайта:</label>
+                </div>
+                <div>
+                    <label for="url">URL сайта:</label>
+                </div>
+                <div>
+                    <label for="date">Дата запуска сайта:</label>
+                </div>
+                <div>
+                    <label for="number">Посетителей в сутки:</label>
+                </div>
+                <div>
+                    <label for="email">E-mail для связи:</label>
+                </div>
+                <div>
+                    <label for="select">Рубрика каталога:</label>
+                </div>
+                <div>
+                    <label for="radio-btns">Размещение:</label>
+                </div>
+                <div>
+                    <label for="checkbox">Разрешить отзывы:</label>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <input id="creator-name" type="text">
+                <input id="name" type="text">
+                <input id="url" type="url">
+                <input id="date" type="date">
+                <input id="number" type="number">
+                <input id="email" type="email">
+                <select id="select">
+                    <option value="value1">автомобили</option>
+                    <option value="value2" selected>бытовая техника</option>
+                    <option value="value3">инструменты</option>
+                </select>
+                <div class="radio-btns">
+                    
+                    <input type="radio" id="contactChoice1" name="contact" value="email">
+                    <label for="contactChoice1">бесплатное</label>
+
+                    <input type="radio" id="contactChoice2" name="contact" value="phone">
+                    <label for="contactChoice2">платное</label>
+
+                    <input type="radio" id="contactChoice3" name="contact" value="mail">
+                    <label for="contactChoice3">VIP</label>
+                </div>
+                <div class="check">
+                    <input id="checkbox" type="checkbox">
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <div>
+                <label for="about-textarea">Описание сайта</label>
+            </div>
+            <div>
+                <textarea id="about-textarea" cols="30" rows="10"></textarea>
+            </div> 
+             
+            <button class="public-form">Опубликовать</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
