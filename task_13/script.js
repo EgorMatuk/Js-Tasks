@@ -1,12 +1,6 @@
-// let form = document.getElementsByTagName('form');
-// form.onsubmit = function(){
-//     console.log('sdsdsd')
-// }
+let form = document.querySelector('.main-form');
+form.addEventListener('click',function(event){
+    event.target.classList.add('error');
+});
 
-// function formIsValid(){
-//     let inputs = document.querySelectorAll('input');
-//     inputs.forEach(function (input){
-//         !input.value? input.classList.add('error') : false; 
-//     });
-// }
 

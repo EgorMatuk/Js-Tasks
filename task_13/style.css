@@ -68,3 +68,6 @@ textarea{
 #number{
     width: 60%;
 }
+.error{
+    border-color: red;
+}
