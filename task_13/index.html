@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="main-form" action="https://fe.it-academy.by/TestForm.php" method="post">
+    <form class="main-form" action="https://fe.it-academy.by/TestForm.php" method="get">
         <h1 class="form-title">Здравствуйте</h1>
         <div class="form-body">
             <div class="label-row">
@@ -43,30 +43,30 @@
             </div>
 
             <div class="input-row">
-                <input id="creator-name" type="text">
-                <input id="name" type="text">
-                <input id="url" type="url">
-                <input id="date" type="date">
-                <input id="number" type="number">
-                <input id="email" type="email">
-                <select id="select">
-                    <option value="value1">автомобили</option>
-                    <option value="value2" selected>бытовая техника</option>
-                    <option value="value3">инструменты</option>
+                <input id="creator-name" name="creator-name" type="text">
+                <input id="name" name="name" type="text">
+                <input id="url" name="url" type="url">
+                <input id="date" name="date" type="date">
+                <input id="number" name="number" type="number">
+                <input id="email" name="email" type="email">
+                <select id="select" name="category">
+                    <option value="mashines">автомобили</option>
+                    <option value="tech" selected>бытовая техника</option>
+                    <option value="instruments">инструменты</option>
                 </select>
                 <div class="radio-btns">
                     
-                    <input type="radio" id="contactChoice1" name="contact" value="email">
+                    <input type="radio" id="contactChoice1" name="placing" value="free">
                     <label for="contactChoice1">бесплатное</label>
 
-                    <input type="radio" id="contactChoice2" name="contact" value="phone">
+                    <input type="radio" id="contactChoice2" name="placing" value="pay-to-win">
                     <label for="contactChoice2">платное</label>
 
-                    <input type="radio" id="contactChoice3" name="contact" value="mail">
+                    <input type="radio" id="contactChoice3" name="placing" value="vip">
                     <label for="contactChoice3">VIP</label>
                 </div>
                 <div class="check">
-                    <input id="checkbox" type="checkbox">
+                    <input name="isAgree" id="checkbox" type="checkbox">
                 </div>
             </div>
         </div>
@@ -75,11 +75,10 @@
                 <label for="about-textarea">Описание сайта</label>
             </div>
             <div>
-                <textarea id="about-textarea" cols="30" rows="10"></textarea>
+                <textarea name="aboutText" id="about-textarea" cols="30" rows="10"></textarea>
             </div> 
-             
-            <button class="public-form">Опубликовать</button>
         </div>
+        <button type="submit" class="public-form">Опубликовать</button>
     </form>
 
     <script src="script.js"></script>
