@@ -98,3 +98,10 @@ document.getElementById('calculate-salary').addEventListener('click', function()
 });
 
 //Task 11
+document.getElementById('third_login').addEventListener('keyup', function(event){
+    var elementVal = event.target;
+    var syntaxErr = document.querySelector('.error-message4');
+    var numOfWordsErr = document.querySelector('.error-message3');
+    event.code === 'Enter' && event.target.value.length > 3? syntaxErr.style.display = 'none' : syntaxErr.style.display = 'block';
+    event.code === 'Enter' && elementVal.value[0] === elementVal.value[0].toUpperCase()? numOfWordsErr.style.display = 'none' :  numOfWordsErr.style.display = 'block';
+});
