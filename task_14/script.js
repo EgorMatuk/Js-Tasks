@@ -79,22 +79,65 @@
 //     e.preventDefault();
 
 // })
+var user = {
+    name:'User',
+    avatar: document.querySelector('.show').src
+};
 
-
-// function scrollingUp(){
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     })
-// }
 var userForm = document.querySelector('#start-question');
-var user = ['User', 'avatar'];
 var mainWindow = document.querySelector('.heading');
 var questionWindow = document.querySelector('.quiz');
+var avatarContainer = document.querySelector('#start-question');
 
 
-userForm.addEventListener('submit', function(action){
-    mainWindow.classList.add('quiz');
-    questionWindow.classList.remove('quiz');
-    action.preventDefault();
+//Событие ВЫБОР АВАТАРКИ пользователя
+avatarContainer.addEventListener('click', function(event){
+    if(event.target.tagName === 'INPUT' && event.target.type === 'radio'){
+        document.querySelectorAll('.show').forEach(function(item){
+            item.classList.remove('show');
+        });
+        event.target.previousElementSibling.firstElementChild.classList.toggle('show');
+        user.avatar = event.target.previousElementSibling.firstElementChild.src;
+    }
 });
+
+//При возниконовении события SUBMIT начальной формы
+userForm.addEventListener('submit', function(action){
+    var nameInputValue = userForm.elements.question1.value;
+    nameInputValue !== '' && nameInputValue.length > 3 ? (
+        user.name = nameInputValue,
+        mainWindow.classList.add('quiz'),
+        questionWindow.classList.remove('quiz')
+    ) : alert('Введите коррекное имя!');
+    action.preventDefault();
+    questionsContainers.forEach(container => container.classList.add('quiz'));
+    questionsContainers[0].classList.remove('quiz');
+    questionWindow.querySelector('.submit').classList.add('quiz');
+});
+
+
+var questionsContainers = document.querySelectorAll('.quiz-form__quiz');
+//Next button
+document.querySelector('.next').addEventListener('click', function(){
+    var newQuestion;
+    questionsContainers.forEach(function(question){
+        if(!question.classList.contains('quiz')){
+            question.classList.add('answered');
+            question.classList.add('quiz');
+            newQuestion = question.nextElementSibling;
+        }
+    })
+    newQuestion.classList.remove('quiz');
+    islast(newQuestion);
+});
+
+//Проверка на последний вопрос
+function islast(question){
+    question === questionsContainers[questionsContainers.length - 1] ? (
+        questionWindow.querySelector('.submit').classList.remove('quiz'),
+        questionWindow.querySelector('.next').classList.add('quiz')
+    ) : false;
+}
+
+
+
