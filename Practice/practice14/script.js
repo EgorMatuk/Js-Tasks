@@ -21,7 +21,13 @@ var mainPictue = document.querySelector('.photo img');
 var imagesContainer = document.querySelector('.container');
 
 imagesContainer.addEventListener('click', function(event){
-    event.target.parentElement.classList.contains('image') ? mainPictue.src = event.target.src : false;
+    event.target.parentElement.classList.contains('image') ? (
+        mainPictue.src = event.target.src , 
+        document.querySelectorAll('.image').forEach(function(element){
+            element.classList.contains('active-image')? element.classList.remove('active-image'): false;
+        }),
+        event.target.parentElement.classList.add('active-image')
+    ): false;
 });
 
 //task5

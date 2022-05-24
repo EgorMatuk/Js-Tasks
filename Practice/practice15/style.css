@@ -44,3 +44,6 @@ pre{
     display: block;
     top: 150px;
 }
+.line{
+    text-decoration: line-through;
+}
