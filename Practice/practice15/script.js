@@ -39,3 +39,5 @@
         document.getElementById('current-total').innerHTML = totalInput.value * document.querySelector('.price').innerHTML;
     }
  });
+
+ //task6

@@ -45,7 +45,6 @@ document.getElementById('sort').addEventListener('click', function(){
 	});
 	
 	list.innerHTML = '';
-	
 	for (let li of sorted) {
 		list.appendChild(li);
 	}
