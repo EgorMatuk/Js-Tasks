@@ -41,3 +41,27 @@
  });
 
  //task6
+ var itemsArea = document.getElementById('current-cart-items');
+ itemsArea.addEventListener('click', function(event){
+    if(event.target.tagName === 'A' && event.target.innerHTML === '+1'){
+        ++event.target.previousElementSibling.value;
+    }else if(event.target.tagName === 'A' && event.target.innerHTML === '-1' && event.target.nextElementSibling.value != '0'){
+        --event.target.nextElementSibling.value;
+    }else if(event.target.tagName === 'A' && event.target.innerHTML === 'Посчитать сумму всех товаров'){
+        var items = itemsArea.querySelectorAll('.card-action');
+        var sum = 0;
+        items.forEach(element => {
+           sum += element.querySelector('.price').innerHTML * element.querySelector('.total').value;
+        });
+        itemsArea.querySelector('#current-total-items').innerHTML = sum;
+    }
+ });
+ 
+ //task7
+ var inputWords = document.querySelector('input[name="input-info"]');
+ inputWords.addEventListener('keyup', function(event){
+     if(event.code === 'Enter' && inputWords.value != ''){
+        inputWords.insertAdjacentHTML('afterend',`<p>${inputWords.value}</p>`);
+        inputWords.value = '';
+     }
+ })
