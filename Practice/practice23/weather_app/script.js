@@ -13,8 +13,15 @@ const getResurces = async(url) => {
 }
 
 const getWeatherInfo = async(place = 'Minsk') => {
-    const result = await getResurces(`${WEATHER_URL}?q=${place}&appid=${APP_ID}`);
+    const result = await getResurces(`${WEATHER_URL}?q=${place}&appid=${APP_ID}&lang=ru`);
     return result;
+}
+
+const currentWeatherPicture = (temp) => {
+    const currentWeather = document.querySelector('#weather-current');
+    temp > 20 ? currentWeather.setAttribute('src', 'images/tropical.jpg') : false;
+    temp > 0 && temp < 20 ? currentWeather.setAttribute('src', 'images/fall.jpg') : false;
+    temp < 4 ? currentWeather.setAttribute('src', 'images/winter.jpg') : false;
 }
 
 const renderWeatherApp = async() => {
@@ -25,5 +32,13 @@ const renderWeatherApp = async() => {
 
     currentTemp.innerHTML = Math.round(data.main.temp - 273);
     currentWind.innerHTML = Math.ceil(data.wind.speed);
+    const area = document.querySelector('.card-content');
+    area.insertAdjacentHTML('beforeend', `<p>Направление ветра(градус): ${data.wind.deg}</p>`);
+    area.insertAdjacentHTML('beforeend', `<p>Максимальная температура: ${Math.round(data.main.temp_max - 273)} градусов</p>`);
+    area.insertAdjacentHTML('beforeend', `<p>Минимальная температура: ${Math.round(data.main.temp_min - 273)} градусов</p>`);
+    area.insertAdjacentHTML('beforeend', `<p>Сообщение о погоде: ${data.weather[0].description}</p>`)
+
+    currentWeatherPicture(Math.round(data.main.temp - 273));
+    console.log(data);
 }
 document.querySelector('#get-info').addEventListener('click', renderWeatherApp);
