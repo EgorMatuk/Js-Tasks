@@ -1,1 +1,8 @@
- 
+.new-day{
+    background-color: blue !important;
+    color: aliceblue;
+}
+.icon-weather{
+    width: 40px;
+    height: 40px;
+}
