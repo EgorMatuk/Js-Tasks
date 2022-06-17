@@ -1,6 +1,6 @@
 const renderUniverList = async() =>{
-
-    const dataUniver = await getUniversList();
+    const univerCurrent = document.getElementById('current-tour').value;
+    const dataUniver = await getUniversList(univerCurrent);
     const uList = document.querySelector('#list-matches');
 
     uList.innerHTML = '';
@@ -14,4 +14,5 @@ const renderUniverList = async() =>{
         `
     });
 }
-renderUniverList();
+
+document.getElementById('current-tour').addEventListener('change',renderUniverList);
